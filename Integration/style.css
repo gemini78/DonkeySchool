@@ -1,18 +1,16 @@
 * {
-    box-sizing: border-box;
-}
-body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-img {
+main img {
     border: 1px solid black;
-    border-radius: 3px;
+    border-radius: 3px;    
 }
 
 
-img:hover {
+main img:hover {
     opacity: 0.5;
 }
 
@@ -21,7 +19,7 @@ img:hover {
     filter: grayscale(100%);
 }
 
-.page-index {
+main .page-index {
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -46,11 +44,16 @@ img:hover {
     padding: 30px;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
+main section.banner {    
+    grid-area: banner;
+    height: 40vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
+
 
 nav ul li {
     display: inline-block;
@@ -96,43 +99,124 @@ nav .sub-menu li a {
 }
 
 
-.banner {
-    grid-area: banner;
-    height: 35vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.projects {
+main section.projects {
     grid-area: projects;
-    height: 60vh;
+    height: 50vh;
+    margin: 100px;
 }
 
-.projects .articles {
+main section.projects .articles {
     display: flex;
     justify-content: space-between;
     padding: 10px;
 }
 
-.projects h2 {
+main section.projects h2 {
+    text-align: left;
+}
+
+main section.etudes {
+    grid-area: studies;
+    height: 50vh;
+    margin: 100px;
+}
+
+main section.etudes h2 {
     text-align: center;
 }
 
-.etudes {
-    grid-area: studies;
-    height: 60vh;
+main section.etudes .info-user {
+    display: flex;
+    align-items: stretch;    
+    justify-content: space-around;
+    margin-bottom: 2rem;    
 }
 
-.contact {
+main section.etudes .info-user .info-user__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main section.etudes .info-user .info-user__right {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+main section.etudes .etudes-user .etude-user {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+main section.etudes .etudes-user .etude-user .etude-user__date {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+main section.articles {
+    grid-area: studies;
+    height: 50vh;
+    margin: 100px;
+}
+
+main section.articles .articles__container {
+    display: flex;
+    justify-content: space-around;
+}
+
+main section.articles .articles__container .article {
+    width: 300px;
+}
+
+
+main section.articles .articles__container .article__image {
+    background: url('https://picsum.photos/200') center center;
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    margin-bottom: 10px; 
+}
+
+main section.articles .articles__container .article__title {
+    margin-bottom: 10px; 
+}
+
+main section.articles .articles__container .article__description {
+    margin-bottom: 10px;
+}
+
+main section.articles .articles__container .article__actions .article__actions_left,
+main section.articles .articles__container .article__actions .article__actions_right {
+    padding: 10px;
+    width: 110px;
+}
+
+
+main section.articles .articles__container .article__actions .article__actions_right{
+    background: black;
+    color: white;
+    margin-left: 30px;
+}
+
+
+main section.contact {
     grid-area: contact;
-    height: 35vh;
+    height: 40vh;
+    margin: 100px;
+}
+
+main section.contact .contact__form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .footer {
     grid-area: footer;
     height: 35vh;
 }
-
-
-
+.footer .footer_info{
+    text-align: center;
+    padding: 10px;
+}
