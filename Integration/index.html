@@ -7,143 +7,156 @@
     <meta name="author" content="PRENOM NOM">
     <meta name="description" content="Mon portfolio, c'est avant tout une bibliothèque de tous mes projets, mais aussi un concentré d'articles">
     <title>Mon portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>MON PORTFOLIO</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Projets</a></li>
-                <li><a href="#">Etudes</a></li>
-                <li><a href="#">Articles</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="banner">
-        <h2>NOM PRENOM</h2>
-    </section>
-    <section class="projects">
-        <h2>PROJETS REALISÉS</h2>
-        <article class="projet">
-            <img src="https://picsum.photos/200" alt="project image">
-            <h3>Projet 1</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia! Deleniti, dolore autem. At architecto reiciendis sunt distinctio! 
-                Totam error ipsum necessitatibus pariatur?
-            </p>
-            <button type="button">En savoir plus</button>
-        </article>
-        <article class="projet">
-            <img src="https://picsum.photos/200" alt="project image">
-            <h3>Projet 2</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia! Deleniti, dolore autem. At architecto reiciendis sunt distinctio! 
-                Totam error ipsum necessitatibus pariatur?
-            </p>
-            <button type="button">En savoir plus</button>
-        </article>
-        <article class="projet">
-            <img src="https://picsum.photos/200" alt="project image">
-            <h3>Projet 3</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia! Deleniti, dolore autem. At architecto reiciendis sunt distinctio! 
-                Totam error ipsum necessitatibus pariatur?
-            </p>
-            <button type="button">En savoir plus</button>
-        </article>
-    </section>
-    <section class="etudes">
-        <h2>ETUDES</h2>
-        <div class="info-user">
-            <img src="https://w7.pngwing.com/pngs/1007/225/png-transparent-computer-icons-system-administrator-businessperson-man-icon-silhouette-black-and-white-scalable-vector-graphics-thumbnail.png" alt="user image" class="info-user__img" width="200" height="200">
-            <span class="info-user__lastname">NOM</span>
-            <span class="info-user__firstname">PRENOM</span>
-            <span class="info-user__age">AGE</span>
-            <span class="info-user__email">ADRESSE EMAIL</span>
-            <span class="info-user__tel">TELEPHONE</span>
-        </div>
-
-        <div class="etude-user">
-            <h4 class="etude-user__date">DATE</h4>
-            <p class="etude-user__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Aliquam, ut ex recusandae dolores exercitationem quos iusto pariatur, impedit nulla reiciendis illo commodi, 
-                ipsum enim? Molestias dignissimos commodi eligendi incidunt nisi.
-            </p>
-        </div>
-        <div class="etude-user">
-            <h4 class="etude-user__date">DATE</h4>
-            <p class="etude-user__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Aliquam, ut ex recusandae dolores exercitationem quos iusto pariatur, impedit nulla reiciendis illo commodi, 
-                ipsum enim? Molestias dignissimos commodi eligendi incidunt nisi.
-            </p>
-        </div>
-        <div class="etude-user">
-            <h4 class="etude-user__date">DATE</h4>
-            <p class="etude-user__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Aliquam, ut ex recusandae dolores exercitationem quos iusto pariatur, impedit nulla reiciendis illo commodi, 
-                ipsum enim? Molestias dignissimos commodi eligendi incidunt nisi.
-            </p>
-        </div>
-        <div class="etude-user">
-            <h4 class="etude-user__date">DATE</h4>
-            <p class="etude-user__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Aliquam, ut ex recusandae dolores exercitationem quos iusto pariatur, impedit nulla reiciendis illo commodi, 
-                ipsum enim? Molestias dignissimos commodi eligendi incidunt nisi.
-            </p>
-        </div>        
-    </section>
-    <section class="articles">
-        <h2>ARTICLES</h2>
-        <article class="article">
-            <img src="https://picsum.photos/200" alt="article image" width="200" height="200">
-            <h3 class="article__title">Article 1</h3>
-            <p class="article__description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                Expedita autem ad omnis eius esse consequatur. At, quam architecto. Dolorum ipsam quo dicta facere magni, 
-                soluta quia earum nobis iste numquam.
-            </p>
-            <div class="article__actions">
-                <button type="button" class="article__actions_left">Lire</button>
-                <button type="button" class="article__actions_right">Commentaires</button>
+    <div class="page-index">
+        <header class="header">
+            <h1>MON PORTFOLIO</h1>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#">Projets</a></li>
+                    <li><a href="#">Etudes</a>                        
+                    </li>                    
+                    <li>
+                        <a href="#">Articles</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">Symfony</a></li>
+                            <li><a href="#">Html/Css</a></li>
+                            <li><a href="#">Javascript</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="banner">
+            <h2>NOM PRENOM</h2>
+        </section>
+        <section class="projects">
+            <h2>PROJETS REALISÉS</h2>
+            <div class="articles">
+                <article class="projet">
+                    <img src="https://picsum.photos/300" alt="project image">
+                    <h3>Projet 1</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                        Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia! Deleniti, dolore autem. At architecto reiciendis sunt distinctio! 
+                        Totam error ipsum necessitatibus pariatur?
+                    </p>
+                    <button type="button">En savoir plus</button>
+                </article>
+                <article class="projet">
+                    <img src="https://picsum.photos/300" alt="project image">
+                    <h3>Projet 2</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                        Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia! Deleniti, dolore autem. At architecto reiciendis sunt distinctio! 
+                        Totam error ipsum necessitatibus pariatur?
+                    </p>
+                    <button type="button">En savoir plus</button>
+                </article>
+                <article class="projet">
+                    <img src="https://picsum.photos/300" alt="project image">
+                    <h3>Projet 3</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                        Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia! Deleniti, dolore autem. At architecto reiciendis sunt distinctio! 
+                        Totam error ipsum necessitatibus pariatur?
+                    </p>
+                    <button type="button">En savoir plus</button>
+                </article>
             </div>
-        </article>
-
-        <article class="article">
-            <img src="https://picsum.photos/200" alt="article image" width="200" height="200">
-            <h3 class="article__title">Article 2</h3>
-            <p class="article__description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                Expedita autem ad omnis eius esse consequatur. At, quam architecto. Dolorum ipsam quo dicta facere magni, 
-                soluta quia earum nobis iste numquam.
-            </p>
-            <div class="article__actions">
-                <button type="button" class="article__actions_left">Lire</button>
-                <button type="button" class="article__actions_right">Commentaires</button>
+        </section>
+        <section class="etudes">
+            <h2>ETUDES</h2>
+            <div class="info-user">
+                <img src="https://w7.pngwing.com/pngs/590/236/png-transparent-computer-icons-man-icon-recruiter-business-desktop-wallpaper-thumbnail.png" alt="user image" class="info-user__img" width="200" height="200">
+                <span class="info-user__lastname">NOM</span>
+                <span class="info-user__firstname">PRENOM</span>
+                <span class="info-user__age">AGE</span>
+                <span class="info-user__email">ADRESSE EMAIL</span>
+                <span class="info-user__tel">TELEPHONE</span>
             </div>
-        </article>
-    </section>
-    <section class="contact">
-        <h2>CONTACT</h2>
-        <form action="#" method="post">
-            <label for="names">Nom et Prénom</label>
-            <input type="text" id="names">
-
-            <label for="email">E-mail</label>
-            <input type="email" id="email">
-
-            <label for="message">Message</label>
-            <textarea id="message" cols="30" rows="10"></textarea>            
-            
-            <button type="submit">Envoyé</button>
-        </form>
-    </section>
-    <footer class="footer">
-        <h3 class="footer_info"><a href="#">monportfolio.com</a></h3>
-    </footer>
+    
+            <div class="etude-user">
+                <h4 class="etude-user__date">DATE</h4>
+                <p class="etude-user__description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Aliquam, ut ex recusandae dolores exercitationem quos iusto pariatur, impedit nulla reiciendis illo commodi, 
+                    ipsum enim? Molestias dignissimos commodi eligendi incidunt nisi.
+                </p>
+            </div>
+            <div class="etude-user">
+                <h4 class="etude-user__date">DATE</h4>
+                <p class="etude-user__description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Aliquam, ut ex recusandae dolores exercitationem quos iusto pariatur, impedit nulla reiciendis illo commodi, 
+                    ipsum enim? Molestias dignissimos commodi eligendi incidunt nisi.
+                </p>
+            </div>
+            <div class="etude-user">
+                <h4 class="etude-user__date">DATE</h4>
+                <p class="etude-user__description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Aliquam, ut ex recusandae dolores exercitationem quos iusto pariatur, impedit nulla reiciendis illo commodi, 
+                    ipsum enim? Molestias dignissimos commodi eligendi incidunt nisi.
+                </p>
+            </div>
+            <div class="etude-user">
+                <h4 class="etude-user__date">DATE</h4>
+                <p class="etude-user__description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Aliquam, ut ex recusandae dolores exercitationem quos iusto pariatur, impedit nulla reiciendis illo commodi, 
+                    ipsum enim? Molestias dignissimos commodi eligendi incidunt nisi.
+                </p>
+            </div>        
+        </section>
+        <section class="articles">
+            <h2>ARTICLES</h2>
+            <article class="article">
+                <img src="https://picsum.photos/200" alt="article image" width="200" height="200">
+                <h3 class="article__title">Article 1</h3>
+                <p class="article__description">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Expedita autem ad omnis eius esse consequatur. At, quam architecto. Dolorum ipsam quo dicta facere magni, 
+                    soluta quia earum nobis iste numquam.
+                </p>
+                <div class="article__actions">
+                    <button type="button" class="article__actions_left">Lire</button>
+                    <button type="button" class="article__actions_right">Commentaires</button>
+                </div>
+            </article>
+    
+            <article class="article">
+                <img src="https://picsum.photos/200" alt="article image" width="200" height="200">
+                <h3 class="article__title">Article 2</h3>
+                <p class="article__description">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    Expedita autem ad omnis eius esse consequatur. At, quam architecto. Dolorum ipsam quo dicta facere magni, 
+                    soluta quia earum nobis iste numquam.
+                </p>
+                <div class="article__actions">
+                    <button type="button" class="article__actions_left">Lire</button>
+                    <button type="button" class="article__actions_right">Commentaires</button>
+                </div>
+            </article>
+        </section>
+        <section class="contact">
+            <h2>CONTACT</h2>
+            <form action="#" method="post">
+                <label for="names">Nom et Prénom</label>
+                <input type="text" id="names">
+    
+                <label for="email">E-mail</label>
+                <input type="email" id="email">
+    
+                <label for="message">Message</label>
+                <textarea id="message" cols="30" rows="10"></textarea>            
+                
+                <button type="submit">Envoyé</button>
+            </form>
+        </section>
+        <footer class="footer">
+            <h3 class="footer_info"><a href="#">monportfolio.com</a></h3>
+        </footer>
+    </div>
 </body>
 </html>
