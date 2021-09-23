@@ -9,7 +9,9 @@
     <meta name="description"
         content="Mon portfolio, c'est avant tout une bibliothèque de tous mes projets, mais aussi un concentré d'articles">
     <title>Mon portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">    
+    <link href="mobile.css" rel="stylesheet" media="screen and (max-width: 600px)">      
+
 </head>
 
 <body>
@@ -41,7 +43,7 @@
                 <h2>PROJETS REALISÉS</h2>
                 <div class="articles">
                     <article class="projet">
-                        <img src="https://picsum.photos/300" alt="project image">
+                        <div class="projet__image"></div>
                         <h3>Projet 1</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia!
@@ -51,7 +53,7 @@
                         <button type="button">En savoir plus</button>
                     </article>
                     <article class="projet">
-                        <img src="https://picsum.photos/300" alt="project image">
+                        <div class="projet__image"></div>
                         <h3>Projet 2</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia!
@@ -61,7 +63,7 @@
                         <button type="button">En savoir plus</button>
                     </article>
                     <article class="projet">
-                        <img src="https://picsum.photos/300" alt="project image">
+                        <div class="projet__image"></div>
                         <h3>Projet 3</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia!
@@ -178,8 +180,9 @@
     
                         <label for="message">Message</label><br>
                         <textarea id="message" cols="30" rows="10"></textarea><br>
-    
-                        <button type="submit">Envoyé</button>
+                        <div class="contact__form__send">
+                            <button type="submit">Envoyé</button>
+                        </div>
                     </form>
                 </div>
             </section>
