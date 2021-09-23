@@ -51,9 +51,7 @@ main section.banner {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
-
 
 nav ul li {
     display: inline-block;
@@ -97,7 +95,6 @@ nav .sub-menu li:hover a {
 nav .sub-menu li a {
     color: #fff;
 }
-
 
 main section.projects {
     grid-area: projects;
@@ -192,13 +189,11 @@ main section.articles .articles__container .article__actions .article__actions_r
     width: 110px;
 }
 
-
 main section.articles .articles__container .article__actions .article__actions_right{
     background: black;
     color: white;
     margin-left: 30px;
 }
-
 
 main section.contact {
     grid-area: contact;
