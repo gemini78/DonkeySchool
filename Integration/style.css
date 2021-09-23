@@ -8,19 +8,15 @@ img {
     border-radius: 3px;    
 }
 
-
 img:hover {
     opacity: 0.5;
 }
-
-
 
 /* black & white image, it is the image of second project */
 main section.projects .projet:nth-child(2) .projet__image:nth-child(1) {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
-
 
 main .page-index {
     height: 100vh;
@@ -34,8 +30,7 @@ main .page-index {
     "studies studies studies"
     "post post post"
     "contact contact contact"
-    "footer footer footer"
-    ;
+    "footer footer footer";
 }
 
 .page-index {
@@ -109,7 +104,6 @@ nav .sub-menu li a {
 
 /*----------------------      FIN NAVIGATION   -------------------*/
 
-
 /*----------------------      BANNIERE      --------------------*/
 main section.banner {    
     grid-area: banner;
@@ -123,7 +117,6 @@ main section.banner {
 }
 
 /*----------------------      FIN BANNIERE   -------------------*/
-
 
 /*----------------------      PROJETS   -------------------*/
 
