@@ -46,6 +46,7 @@ main .page-index {
     text-align: center;
     padding: 30px;
 }
+
 .header h1 {
     margin-top: 25px;
     margin-bottom: 50px;
@@ -53,11 +54,9 @@ main .page-index {
     text-align: center;
     color: red;
 }
-
 /*----------------------      FIN HEADER   --------------------*/
 
 /*----------------------      NAVIGATION   -------------------*/
-
 nav ul li {
     display: block;
     position: relative;
@@ -101,7 +100,6 @@ nav .sub-menu li:hover a {
 nav .sub-menu li a {
     color: #fff;
 }
-
 /*----------------------      FIN NAVIGATION   -------------------*/
 
 /*----------------------      BANNIERE      --------------------*/
@@ -114,12 +112,15 @@ main section.banner {
     background: url('https://picsum.photos/seed/picsum/200/300') center center;
     background-size: cover;
     margin-top: 30px;
+    border-radius: 3px;
 }
 
+main section.banner:hover {
+    opacity: 0.5;
+}
 /*----------------------      FIN BANNIERE   -------------------*/
 
 /*----------------------      PROJETS   -------------------*/
-
 main section.projects {
     grid-area: projects;
     margin-top: 30px;
@@ -162,11 +163,9 @@ main section.projects article p {
 main section.projects article button {
     padding: 10px;
 }
-
 /*----------------------      FIN PROJETS   -------------------*/
 
 /*----------------------      ETUDES   ------------------------*/
-
 main section.etudes {
     grid-area: studies;
     height: 58vh;
@@ -217,7 +216,6 @@ main section.etudes .etudes-user .etude-user .etude-user__date {
 /*----------------------      FIN ETUDES   -------------------*/
 
 /*----------------------      ARTICLES   -------------------*/
-
 main section.articles {
     grid-area: studies;
     height: auto;
@@ -226,6 +224,7 @@ main section.articles {
 main section.articles h2{
     text-align: center;
 }
+
 main section.articles .articles__container {
     display: flex;
     justify-content: center;
@@ -234,9 +233,9 @@ main section.articles .articles__container {
 }
 
 main section.articles .articles__container .article {
+    width: auto;
     margin-bottom: 15px;
 }
-
 
 main section.articles .articles__container .article__image {
     background: url('https://picsum.photos/400') center center;
@@ -247,15 +246,11 @@ main section.articles .articles__container .article__image {
     margin-bottom: 10px; 
 }
 
-
 main section.articles .articles__container .article__image:hover {
     opacity: 0.5;
 }
 
-main section.articles .articles__container .article__title {
-    margin-bottom: 10px; 
-}
-
+main section.articles .articles__container .article__title,
 main section.articles .articles__container .article__description {
     margin-bottom: 10px;
 }
@@ -268,20 +263,17 @@ main section.articles .articles__container .article__actions {
 main section.articles .articles__container .article__actions .article__actions_left,
 main section.articles .articles__container .article__actions .article__actions_right {
     padding: 10px;
-    width: 110px;
+    width: 130px;
 }
-
 
 main section.articles .articles__container .article__actions .article__actions_right{
     background: black;
     color: white;
     margin-left: 30px;
 }
-
 /*----------------------      FIN ARTICLE   --------------------*/
 
 /*----------------------      CONTACT   ------------------------*/
-
 main section.contact {
     grid-area: contact;
     height: auto;
@@ -304,6 +296,10 @@ main section.contact .contact__form {
     align-items: center;
 }
 
+main section.contact .contact__form input {
+    height: 30px;
+}
+
 main section.contact .contact__form input,
 main section.contact .contact__form textarea {
     margin-top: 10px;
@@ -323,7 +319,6 @@ main section.contact .contact__form .contact__form__send button{
 /*----------------------      FIN CONTACT   -------------------*/
 
 /*----------------------      FOOTER   -------------------*/
-
 .footer {
     grid-area: footer;
     height: 35vh;
@@ -337,3 +332,203 @@ main section.contact .contact__form .contact__form__send button{
     text-decoration: none;
 }
 /*----------------------      FIN FOOTER   -------------------*/
+
+/*----------------------      MEDIAS QUERYS -------------------*/
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: darkgray;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    /*----------------------      HEADER      --------------------*/
+    .header h1 {
+        margin-top: 50px;
+        font-size: 60px;
+        letter-spacing: 1.5rem;
+    }
+    /*----------------------      FIN HEADER   --------------------*/
+    /*----------------------      BANNIERE      --------------------*/
+    /*----------------------      FIN BANNIERE   -------------------*/
+    /*----------------------      NAVIGATION   -------------------*/
+    
+    nav ul li {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+    }
+    
+    nav ul li.active {
+        border: 2px solid red;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 20px;   
+        text-decoration: none;
+        font-size: 30px;    
+        text-transform: uppercase;
+    }
+    
+    nav .sub-menu {
+        display: none;
+        position: absolute;
+        background-color: #1abc9c;
+        width: 200px;
+      
+    }
+    
+    nav ul li a:hover {
+        background-color: #1abc9c;
+        color: #fff;
+    }
+    
+    nav ul li:hover .sub-menu {
+        display: block;
+    }
+    
+    nav .sub-menu li:hover a {
+        background-color: #fff;
+        color: #1abc9c;
+    }
+    
+    nav .sub-menu li a {
+        color: #fff;
+    }
+    /*----------------------      FIN NAVIGATION   -------------------*/
+    
+    /*----------------------      PROJETS   -------------------*/
+    main section.projects {
+        grid-area: projects;
+        height: auto;
+        margin: 100px;
+    }
+        
+    main section.projects .articles {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    main section.projects h2 {
+        text-align: left;
+    }
+    
+    main section.projects article {
+        padding: 10px;
+    }
+    
+    main section.projects article .projet__image {
+        background: url('https://picsum.photos/400') center center;
+        background-size: cover;
+        border-radius: 3px;
+        max-width: 100%;
+        height: 300px;    
+        margin-bottom: 10px;
+    }
+    
+    main section.projects article .projet__image:hover {
+        opacity: 0.5;   
+    }
+    
+    main section.projects article h3,
+    main section.projects article p {
+        margin-bottom: 15px;
+    }
+    
+    main section.projects article button {
+        padding: 10px;
+    }
+    /*----------------------      FIN PROJETS   -------------------*/
+    
+    /*----------------------      ETUDES   ------------------------*/
+    main section.etudes {
+        height: auto;
+        margin: 100px;
+        padding: 50px;
+    }
+    
+    main section.etudes h2 {
+        text-align: left;
+    }
+    
+    main section.etudes .info-user {
+        flex-direction: row;
+        align-items: stretch;    
+        margin-bottom: 2rem;    
+    }
+    
+    main section.etudes .info-user .info-user__left {
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+    }
+    
+    main section.etudes .info-user .info-user__right {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    main section.etudes .etudes-user .etude-user {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    
+    main section.etudes .etudes-user .etude-user .etude-user__date {
+        border: 1px solid black;
+        padding: 10px;
+        margin-right: 20px;
+    }
+    /*----------------------      FIN ETUDES   -------------------*/
+    
+    /*----------------------      ARTICLES   -------------------*/
+    main section.articles {
+        height: auto;
+        margin: 100px;
+    }
+
+    main section.articles h2{
+        text-align: left;
+    }
+    
+    main section.articles .articles__container {
+        justify-content: space-around;
+        align-items: stretch;
+        flex-direction: row;
+    }
+    
+    main section.articles .articles__container .article {
+        padding: 10px;
+    }
+    /*----------------------      FIN ARTICLE   --------------------*/
+    
+    /*----------------------      CONTACT   ------------------------*/
+    main section.contact {
+        margin: 100px;
+    }
+    
+    main section.contact h2 {
+        text-align: left;
+    }
+    
+    main section.contact .contact__form input,
+    main section.contact .contact__form textarea {
+        width: 530px;
+    }    
+    /*----------------------      FIN CONTACT   -------------------*/
+    
+    /*----------------------      FOOTER   -------------------*/    
+    .footer {
+        grid-area: footer;
+        height: 35vh;
+    }
+    .footer .footer_info {
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .footer .footer_info a {
+        text-decoration: none;
+    }
+    /*----------------------      FIN FOOTER   -------------------*/
+}
