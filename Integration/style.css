@@ -1,15 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+:root {
+    /*-----------general--------------*/
+    --primary-font: "Montserrat";
+    --secondary-font: "Playfair+Display";
+   
+    --primary-color: rgba(0,0,0,.8);
+    --secondary-color: black;
+    --light: white;
+
+    --border-radius: 3px;
+    --opacity: 0.5;
+    --margin-bottom-section : 50px;
+
+    --max-width-image: 100%;
+
+    --box-shadow:  rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    /*------- fin general   ---------*/
+
+    /*------- specifique    ---------*/
+    --height-page-index: 100vh;
+    --padding-page-index: 20px;
+    
+    --padding-header: 30px;
+
+    --margin-top-title: 25px;
+    --margin-top-title-large: 50px;
+    --margin-bottom-title: 50px;
+    --font-size-title: 30px;
+    --font-size-title-large: 60px;
+    --letter-spacing-title-large: 25px;
+
+    --border-actif: 2px solid red;
+    --color-active-link-nav: red;
+
+    --padding-navigation: 10px;
+    --padding-navigation-large: 20px;
+    --color-nav: black;
+    --font-size-nav: 25px;
+    --font-size-nav-large: 30px;
+    --top-sub-menu: 0;
+    --left-sub-menu: 0;
+    /*
+    --background-color-nav: #1abc9c;
+    */
+    --width-sub-menu-large: 250px;
+    --color-nav: orange;
+
+    --image-banner: "banner.jpg"; 
+    --height-banner: 80vh;
+    --font-size-banner: 40px;
+    --letter-spacing-banner: 5px;
+    --letter-spacing-l: 32px;
+    --margin-top-banner:31px;
+    
+    --margin-top-projects:30px;
+    --margin-bottom-proj-article: 20px;
+    --padding-proj-article-l: 10px;
+    --height-image-proj: 300px;
+    --margin-bottom-proj-image: 10px;
+    --margin-bottom-proj-h3p: 15px;
+    --padding-proj-button: 10px;
+
+    --padding-etudes: 10px;
+    --padding-etudes-l: 50px;
+    --margin-bottom-etudes:30px;
+    --margin-bottom-etudes-info-user: 15px;
+    --margin-bottom-etudes-info-user-l: 30px;
+    --margin-top-info-user-right: 17px;
+    --margin-bottom-etude-user: 16px;
+    --border-etude-user-date: 1px solid black;
+    --padding-etude-user-date-l: 10px;
+    --margin-right-etude-user-date-l: 20px;
+
+    --margin-bottom-article: 15px;
+    --padding-article-l: 10px;
+    --background-article: url('https://picsum.photos/400') center center;
+    --height-image-article: 300px;
+    --margin-bottom-image-article: 10px;
+    --padding-buttons-article: 10px;
+    --margin-bottom-title-description-article: 10px;
+    --width-buttons-article: 135px;
+    --font-weight-buttons-article: bold;
+    --font-size-buttons-article: 14px;
+    --background-button-right-article: black;
+    /*--- fin specifique    ---------*/
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: var(--primary-font), sans-serif;
+}
+
 img {
-    border-radius: 3px;    
+    border-radius: var(--border-radius);    
 }
 
 img:hover {
-    opacity: 0.5;
+    opacity: var(--opacity);
 }
 
 /* black & white image, it is the image of second project */
@@ -19,7 +118,7 @@ main section.projects .projet:nth-child(2) .projet__image:nth-child(1) {
 }
 
 main .page-index {
-    height: 100vh;
+    height: var(--height-page-index);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -34,7 +133,7 @@ main .page-index {
 }
 
 .page-index {
-    padding: 20px;
+    padding: var(--padding-page-index);
 }
 
 /*----------------------      HEADER      --------------------*/
@@ -44,15 +143,15 @@ main .page-index {
     justify-content:space-around;
     flex-direction: column;
     text-align: center;
-    padding: 30px;
+    padding: var(--padding-header);
 }
 
 .header h1 {
-    margin-top: 25px;
-    margin-bottom: 50px;
-    font-size: 30px;
+    margin-top: var(--margin-top-title);
+    margin-bottom: var(--margin-bottom-title);
+    font-size: var(--font-size-title);
     text-align: center;
-    color: red;
+    font-family: var(--secondary-font);
 }
 /*----------------------      FIN HEADER   --------------------*/
 
@@ -63,67 +162,75 @@ nav ul li {
 }
 
 nav ul li.active a {
-    border: 2px solid red;
+    border: var(--border-actif);
 }
 
 nav ul li a {
     display: inline-block;
-    padding: 10px;   
+    padding: var(--padding-navigation);   
     text-decoration: none;
-    font-size: 15px;    
+    font-size: var(--font-size-nav);    
     text-transform: uppercase;
+    color: var(--color-nav);
 }
 
 nav .sub-menu {
     display: none;
     position: absolute;
-    background-color: #1abc9c;
-    top:0;
-    left:0;  
+    background-color: var(--color-nav);
+    top: var(--top-sub-menu);
+    left: var(--left-sub-menu);  
   
 }
 
 nav ul li a:hover {
-    background-color: #1abc9c;
-    color: #fff;
+    background-color: var(--color-nav);
+    color: var(--light);
 }
 
 nav ul li:hover .sub-menu {
     display: block;
+    top: 38px;
+    z-index: 1;
 }
 
 nav .sub-menu li:hover a {
-    background-color: #fff;
-    color: #1abc9c;
+    background-color: var(--light);
+    color: var(--color-nav);
 }
 
 nav .sub-menu li a {
-    color: #fff;
+    color: var(--light);
 }
 /*----------------------      FIN NAVIGATION   -------------------*/
 
 /*----------------------      BANNIERE      --------------------*/
 main section.banner {    
     grid-area: banner;
-    height: 40vh;    
+    height: var(--height-banner);    
     display: flex;
     align-items: center;
     justify-content: center;    
-    background: url('https://picsum.photos/seed/picsum/200/300') center center;
+    background: url("./images/banner.jpg") center center;
     background-size: cover;
-    margin-top: 30px;
-    border-radius: 3px;
+    margin-top: var(--margin-top-banner);
+    border-radius: var(--border-radius);
 }
 
 main section.banner:hover {
-    opacity: 0.5;
+    opacity: var(--opacity);
+}
+
+main section.banner h2 {
+    font-size: var(--font-size-banner);
+    letter-spacing: var(--letter-spacing-banner);
 }
 /*----------------------      FIN BANNIERE   -------------------*/
 
 /*----------------------      PROJETS   -------------------*/
 main section.projects {
     grid-area: projects;
-    margin-top: 30px;
+    margin-top: var(--margin-top-projects);
     height: auto;
 }
 
@@ -139,42 +246,39 @@ main section.projects h2 {
 }
 
 main section.projects article {
-    margin-bottom: 20px;
+    margin-bottom: var(--margin-bottom-proj-article);
 }
 
 main section.projects article .projet__image {
     background: url('https://picsum.photos/400') center center;
     background-size: cover;
-    border-radius: 3px;
-    max-width: 100%;
-    height: 300px;    
-    margin-bottom: 10px;
+    border-radius: var(--border-radius);
+    max-width: var(--max-width-image);
+    height: var(--height-image-proj);    
+    margin-bottom: var(--margin-bottom-proj-image);
 }
 
 main section.projects article .projet__image:hover {
-    opacity: 0.5;   
+    opacity: var(--opacity);   
 }
 
 main section.projects article h3,
 main section.projects article p {
-    margin-bottom: 15px;
+    margin-bottom: var(--margin-bottom-proj-h3p);
 }
 
 main section.projects article button {
-    padding: 10px;
+    padding: var(--padding-proj-button);
 }
 /*----------------------      FIN PROJETS   -------------------*/
 
 /*----------------------      ETUDES   ------------------------*/
 main section.etudes {
     grid-area: studies;
-    height: 58vh;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, 
-    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: var(--box-shadow); 
     height: auto;
-    padding: 10px;
-    margin-bottom: 30px;
+    padding: var(--padding-etudes);
+    margin-bottom: var(--margin-bottom-etudes);
 }
 
 main section.etudes h2 {
@@ -186,7 +290,7 @@ main section.etudes .info-user {
     flex-direction: column;
     align-items: center;    
     justify-content: space-around;
-    margin-bottom: 15px;    
+    margin-bottom: var(--margin-bottom-etudes-info-user);    
 }
 
 main section.etudes .info-user .info-user__left {
@@ -200,18 +304,18 @@ main section.etudes .info-user .info-user__right {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 17px;
+    margin-top: var(--margin-top-info-user-right);
 }
 
 main section.etudes .etudes-user .etude-user {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    margin-bottom: 1rem;
+    margin-bottom: var(--margin-bottom-etude-user);
 }
 
 main section.etudes .etudes-user .etude-user .etude-user__date {
-    border: 1px solid black;
+    border: var(--border-etude-user-date);
 }
 /*----------------------      FIN ETUDES   -------------------*/
 
@@ -234,25 +338,25 @@ main section.articles .articles__container {
 
 main section.articles .articles__container .article {
     width: auto;
-    margin-bottom: 15px;
+    margin-bottom: var(--margin-bottom-article);
 }
 
 main section.articles .articles__container .article__image {
-    background: url('https://picsum.photos/400') center center;
+    background: var(--background-article);
     background-size: cover;
-    border-radius: 3px;
-    max-width: 100%;
-    height: 300px;    
-    margin-bottom: 10px; 
+    border-radius: var(--border-radius);
+    max-width: var(--max-width-image);
+    height: var(--height-image-article);    
+    margin-bottom: var(--margin-bottom-image-article);    
 }
 
 main section.articles .articles__container .article__image:hover {
-    opacity: 0.5;
+    opacity: var(--opacity);
 }
 
 main section.articles .articles__container .article__title,
 main section.articles .articles__container .article__description {
-    margin-bottom: 10px;
+    margin-bottom: var(--margin-bottom-title-description-article);
 }
 
 main section.articles .articles__container .article__actions {
@@ -262,14 +366,15 @@ main section.articles .articles__container .article__actions {
 
 main section.articles .articles__container .article__actions .article__actions_left,
 main section.articles .articles__container .article__actions .article__actions_right {
-    padding: 10px;
-    width: 130px;
+    padding: var(--padding-buttons-article);
+    width: var(--width-buttons-article);   
+    font-weight: var(--font-weight-buttons-article);
+    font-size: var(--font-size-buttons-article);
 }
 
 main section.articles .articles__container .article__actions .article__actions_right{
-    background: black;
-    color: white;
-    margin-left: 30px;
+    background: var(--background-button-right-article);
+    color: var(--light);
 }
 /*----------------------      FIN ARTICLE   --------------------*/
 
@@ -304,6 +409,7 @@ main section.contact .contact__form input,
 main section.contact .contact__form textarea {
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 main section.contact .contact__form .contact__form__send {   
@@ -343,65 +449,39 @@ main section.contact .contact__form .contact__form__send button{
 @media only screen and (min-width: 800px) {
     /*----------------------      HEADER      --------------------*/
     .header h1 {
-        margin-top: 50px;
-        font-size: 60px;
-        letter-spacing: 1.5rem;
+        margin-top: var(--margin-top-title-large);
+        font-size: var(--font-size-title-large);
+        letter-spacing: var(--letter-spacing-title-large);
     }
     /*----------------------      FIN HEADER   --------------------*/
-    /*----------------------      BANNIERE      --------------------*/
-    /*----------------------      FIN BANNIERE   -------------------*/
     /*----------------------      NAVIGATION   -------------------*/
-    
     nav ul li {
         display: inline-block;
         vertical-align: top;
         position: relative;
     }
     
-    nav ul li.active {
-        border: 2px solid red;
-    }
-    
     nav ul li a {
         display: block;
-        padding: 20px;   
+        padding: var(--padding-navigation-large);   
         text-decoration: none;
-        font-size: 30px;    
+        font-size: var(--font-size-nav-large);    
         text-transform: uppercase;
     }
     
     nav .sub-menu {
-        display: none;
-        position: absolute;
-        background-color: #1abc9c;
-        width: 200px;
-      
+        width: var(--width-sub-menu-large);
     }
     
-    nav ul li a:hover {
-        background-color: #1abc9c;
-        color: #fff;
-    }
-    
-    nav ul li:hover .sub-menu {
-        display: block;
-    }
-    
-    nav .sub-menu li:hover a {
-        background-color: #fff;
-        color: #1abc9c;
-    }
-    
-    nav .sub-menu li a {
-        color: #fff;
-    }
     /*----------------------      FIN NAVIGATION   -------------------*/
-    
+    /*----------------------      BANNIERE      --------------------*/
+    main section.banner h2 {
+        letter-spacing: var(--letter-spacing-l);
+    }
+    /*----------------------      FIN BANNIERE   -------------------*/
     /*----------------------      PROJETS   -------------------*/
     main section.projects {
-        grid-area: projects;
-        height: auto;
-        margin: 100px;
+        margin: var(--margin-bottom-section);
     }
         
     main section.projects .articles {
@@ -415,37 +495,19 @@ main section.contact .contact__form .contact__form__send button{
     }
     
     main section.projects article {
-        padding: 10px;
-    }
-    
-    main section.projects article .projet__image {
-        background: url('https://picsum.photos/400') center center;
-        background-size: cover;
-        border-radius: 3px;
-        max-width: 100%;
-        height: 300px;    
-        margin-bottom: 10px;
+        padding: var(--padding-proj-article-l);
     }
     
     main section.projects article .projet__image:hover {
-        opacity: 0.5;   
-    }
-    
-    main section.projects article h3,
-    main section.projects article p {
-        margin-bottom: 15px;
-    }
-    
-    main section.projects article button {
-        padding: 10px;
+        opacity: var(--opacity);   
     }
     /*----------------------      FIN PROJETS   -------------------*/
     
     /*----------------------      ETUDES   ------------------------*/
     main section.etudes {
         height: auto;
-        margin: 100px;
-        padding: 50px;
+        margin: var(--margin-bottom-section);
+        padding: var(--padding-etudes-l);
     }
     
     main section.etudes h2 {
@@ -455,7 +517,7 @@ main section.contact .contact__form .contact__form__send button{
     main section.etudes .info-user {
         flex-direction: row;
         align-items: stretch;    
-        margin-bottom: 2rem;    
+        margin-bottom: var(--margin-bottom-etudes-info-user-l);    
     }
     
     main section.etudes .info-user .info-user__left {
@@ -475,16 +537,15 @@ main section.contact .contact__form .contact__form__send button{
     }
     
     main section.etudes .etudes-user .etude-user .etude-user__date {
-        border: 1px solid black;
-        padding: 10px;
-        margin-right: 20px;
+        padding: var(--padding-etude-user-date-l);
+        margin-right: var(--margin-right-etude-user-date-l);
     }
     /*----------------------      FIN ETUDES   -------------------*/
     
     /*----------------------      ARTICLES   -------------------*/
     main section.articles {
         height: auto;
-        margin: 100px;
+        margin: var(--margin-bottom-section);
     }
 
     main section.articles h2{
@@ -498,13 +559,13 @@ main section.contact .contact__form .contact__form__send button{
     }
     
     main section.articles .articles__container .article {
-        padding: 10px;
+        padding: var(--padding-article-l);
     }
     /*----------------------      FIN ARTICLE   --------------------*/
     
     /*----------------------      CONTACT   ------------------------*/
     main section.contact {
-        margin: 100px;
+        margin: var(--margin-bottom-section);
     }
     
     main section.contact h2 {
@@ -520,7 +581,7 @@ main section.contact .contact__form .contact__form__send button{
     /*----------------------      FOOTER   -------------------*/    
     .footer {
         grid-area: footer;
-        height: 35vh;
+        height: auto;
     }
     .footer .footer_info {
         text-align: center;
