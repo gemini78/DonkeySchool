@@ -32,8 +32,8 @@
     --margin-top-title: 25px;
     --margin-top-title-large: 50px;
     --margin-bottom-title: 50px;
-    --font-size-title: 30px;
-    --font-size-title-large: 60px;
+    --font-size-title: 40px;
+    --font-size-title-large: 40px;
     --letter-spacing-title-large: 25px;
 
     --border-actif: 2px solid red;
@@ -54,7 +54,8 @@
 
     --image-banner: "banner.jpg"; 
     --height-banner: 80vh;
-    --font-size-banner: 40px;
+    --font-size-banner: 20px;
+    --font-size-banner-l: 40px;
     --letter-spacing-banner: 5px;
     --letter-spacing-l: 32px;
     --margin-top-banner:31px;
@@ -79,28 +80,32 @@
     --margin-right-etude-user-date-l: 20px;
 
     --margin-bottom-article: 15px;
-    --padding-article-l: 10px;
-    --background-article: url('https://picsum.photos/400') center center;
-    --height-image-article: 300px;
+    --padding-article-l: 10px; 
+    --background-article: url('./images/angular.PNG');
+    --background-article-2: url('./images/react.jpg');
+    --height-image-article: 450px;
     --margin-bottom-image-article: 10px;
     --padding-buttons-article: 10px;
     --margin-bottom-title-description-article: 10px;
-    --width-buttons-article: 135px;
+    --width-buttons-article: 222px;
     --font-weight-buttons-article: bold;
-    --font-size-buttons-article: 14px;
+    --font-size-buttons-article: 1.5rem;
     --background-button-right-article: black;
     /*--- fin specifique    ---------*/
 }
 
-
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: var(--primary-font), sans-serif;
+    font-size: 1.2rem;
 }
 
 img {
@@ -111,8 +116,11 @@ img:hover {
     opacity: var(--opacity);
 }
 
+button {
+    font-size: 1.5rem;
+}
 /* black & white image, it is the image of second project */
-main section.projects .projet:nth-child(2) .projet__image:nth-child(1) {
+.projects .projet:nth-child(3) .projet__image:nth-child(1) {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
@@ -156,56 +164,87 @@ main .page-index {
 /*----------------------      FIN HEADER   --------------------*/
 
 /*----------------------      NAVIGATION   -------------------*/
-nav ul li {
+
+.nav {
+    z-index: 1;
+}
+.nav ul {
+    margin: 0px;
+    padding: 0px;
+    list-style:none;
+}
+
+.nav a {
+    padding: 1em;
     display: block;
+    text-align:center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.has-children {
     position: relative;
 }
 
-nav ul li.active a {
-    border: var(--border-actif);
+.has-children:hover > .sous-menu {
+    display: flex;
 }
 
-nav ul li a {
-    display: inline-block;
-    padding: var(--padding-navigation);   
-    text-decoration: none;
-    font-size: var(--font-size-nav);    
-    text-transform: uppercase;
-    color: var(--color-nav);
+.nav .menu {
+    display: flex;
+    flex-direction : row;
+    justify-content: center;
+    flex-flow: column wrap;
 }
 
-nav .sub-menu {
+.nav .menu li.active > a{
+    padding: 15px;
+    border: 2px solid red;
+}
+
+.sous-menu a {
+    text-align: left;
+    color:white;
+}
+
+.sous-menu .sous-menu {
+    top: 0px;
+    left: 100%;
+    background: #1e76d6;
+}
+
+.sous-menu {
     display: none;
+    flex-flow: column wrap;
+    min-width: 100px;
     position: absolute;
-    background-color: var(--color-nav);
-    top: var(--top-sub-menu);
-    left: var(--left-sub-menu);  
-  
+    background: dodgerblue;
+    position: static;
 }
 
-nav ul li a:hover {
-    background-color: var(--color-nav);
-    color: var(--light);
+.sous-menu.is-active {
+    display: flex!important;
 }
 
-nav ul li:hover .sub-menu {
-    display: block;
-    top: 38px;
-    z-index: 1;
+.sous-menu a { /*4*/
+    text-align: center;
+    color:white;
 }
 
-nav .sub-menu li:hover a {
-    background-color: var(--light);
-    color: var(--color-nav);
-}
-
-nav .sub-menu li a {
-    color: var(--light);
+.sous-menu .sous-menu {
+    top: 0px;
+    /*
+    left: 100%;
+    */
+    text-align: center;
+    background: #1e76d6;
 }
 /*----------------------      FIN NAVIGATION   -------------------*/
 
 /*----------------------      BANNIERE      --------------------*/
-main section.banner {    
+.banner {    
     grid-area: banner;
     height: var(--height-banner);    
     display: flex;
@@ -215,42 +254,115 @@ main section.banner {
     background-size: cover;
     margin-top: var(--margin-top-banner);
     border-radius: var(--border-radius);
+    position: relative;
 }
 
-main section.banner:hover {
+.banner:hover {
     opacity: var(--opacity);
 }
 
-main section.banner h2 {
+.banner h2 {
     font-size: var(--font-size-banner);
     letter-spacing: var(--letter-spacing-banner);
+    font-family: var(--secondary-font);
+}
+
+
+.banner .symfony {
+    background: url('./images/logos/symfony.png') center center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    border-radius: 50px;
+}
+
+.banner .php {
+    background: url('./images/logos/php.png') center center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    border-radius: 50px;
+}
+
+.banner .angular {
+    background: url('./images/logos/angular.jpg') center center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    border-radius: 50px;
+}
+
+.banner .react {
+    background: url('./images/logos/react.png') center center;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    border-radius: 50px;
 }
 /*----------------------      FIN BANNIERE   -------------------*/
 
 /*----------------------      PROJETS   -------------------*/
-main section.projects {
+.projects {
     grid-area: projects;
     margin-top: var(--margin-top-projects);
     height: auto;
 }
 
-main section.projects .articles {    
+.projects .projects_container {    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-main section.projects h2 {
+.projects h2 {
     text-align: center;
+    margin-bottom: 15px;
 }
 
-main section.projects article {
+.projects p {
+    line-height: 2.1rem;
+}
+
+.projects article {
     margin-bottom: var(--margin-bottom-proj-article);
 }
 
-main section.projects article .projet__image {
+.projects article .projet__image1 {
+    /*
     background: url('https://picsum.photos/400') center center;
+    */
+    background: url('./images/symfony5.jpg') center center;
+}
+.projects article .projet__image2 {
+    /*
+    background: url('https://picsum.photos/400') center center;
+    */
+    background: url('./images/angular3.PNG') center center;
+
+}
+.projects article .projet__image3 {
+    /*
+    background: url('https://picsum.photos/400') center center;
+    */    
+    background: url('./images/wordpress.jpg') center center;
+}
+
+.projects article .projet__image1,
+.projects article .projet__image2,
+.projects article .projet__image3 {
     background-size: cover;
     border-radius: var(--border-radius);
     max-width: var(--max-width-image);
@@ -258,22 +370,24 @@ main section.projects article .projet__image {
     margin-bottom: var(--margin-bottom-proj-image);
 }
 
-main section.projects article .projet__image:hover {
+.projects article .projet__image1:hover,
+.projects article .projet__image2:hover,
+.projects article .projet__image3:hover {
     opacity: var(--opacity);   
 }
 
-main section.projects article h3,
-main section.projects article p {
+.projects article h3,
+.projects article p {
     margin-bottom: var(--margin-bottom-proj-h3p);
 }
 
-main section.projects article button {
+.projects article button {
     padding: var(--padding-proj-button);
 }
 /*----------------------      FIN PROJETS   -------------------*/
 
 /*----------------------      ETUDES   ------------------------*/
-main section.etudes {
+.etudes {
     grid-area: studies;
     box-shadow: var(--box-shadow); 
     height: auto;
@@ -281,11 +395,11 @@ main section.etudes {
     margin-bottom: var(--margin-bottom-etudes);
 }
 
-main section.etudes h2 {
+.etudes h2 {
     text-align: center;
 }
 
-main section.etudes .info-user {
+.etudes .info-user {
     display: flex;
     flex-direction: column;
     align-items: center;    
@@ -293,93 +407,116 @@ main section.etudes .info-user {
     margin-bottom: var(--margin-bottom-etudes-info-user);    
 }
 
-main section.etudes .info-user .info-user__left {
+.etudes .info-user .info-user__left {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: center;
+    text-align: center;    
 }
 
-main section.etudes .info-user .info-user__right {
+.etudes .info-user .info-user__right {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: var(--margin-top-info-user-right);
 }
 
-main section.etudes .etudes-user .etude-user {
+.etudes .etudes-user .etude-user {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
     margin-bottom: var(--margin-bottom-etude-user);
 }
 
-main section.etudes .etudes-user .etude-user .etude-user__date {
+.etudes .etudes-user .etude-user .etude-user__date {
     border: var(--border-etude-user-date);
+}
+
+p.etude-user__description {
+    line-height: 2.1rem;
+}
+
+h4.etude-user__date {
+    line-height: 7.0rem;
 }
 /*----------------------      FIN ETUDES   -------------------*/
 
 /*----------------------      ARTICLES   -------------------*/
-main section.articles {
+.articles {
     grid-area: studies;
     height: auto;
 }
 
-main section.articles h2{
+.articles h2{
     text-align: center;
+    margin-bottom: 15px;
 }
 
-main section.articles .articles__container {
+.articles .articles__container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-main section.articles .articles__container .article {
+.articles .articles__container .article {
     width: auto;
     margin-bottom: var(--margin-bottom-article);
 }
 
-main section.articles .articles__container .article__image {
+.articles .articles__container .article__image {
     background: var(--background-article);
+}
+
+.articles .articles__container .article__image2 {
+    background: var(--background-article-2);
+}
+
+.articles .articles__container .article__image,
+.articles .articles__container .article__image2 {
     background-size: cover;
+    background-repeat:no-repeat;
     border-radius: var(--border-radius);
     max-width: var(--max-width-image);
     height: var(--height-image-article);    
     margin-bottom: var(--margin-bottom-image-article);    
 }
-
-main section.articles .articles__container .article__image:hover {
+.articles .articles__container .article__image:hover,
+.articles .articles__container .article__image2:hover {
     opacity: var(--opacity);
 }
 
-main section.articles .articles__container .article__title,
-main section.articles .articles__container .article__description {
+p.article__description {
+    line-height: 2.1rem;
+}
+
+.articles .articles__container .article__title,
+.articles .articles__container .article__description {
     margin-bottom: var(--margin-bottom-title-description-article);
 }
 
-main section.articles .articles__container .article__actions {
+.articles .articles__container .article__actions {
     display: flex;
     justify-content: space-between;
 }
 
-main section.articles .articles__container .article__actions .article__actions_left,
-main section.articles .articles__container .article__actions .article__actions_right {
+.article__actions_left,
+.article__actions_right {
     padding: var(--padding-buttons-article);
     width: var(--width-buttons-article);   
     font-weight: var(--font-weight-buttons-article);
     font-size: var(--font-size-buttons-article);
+    
 }
 
-main section.articles .articles__container .article__actions .article__actions_right{
+.articles .articles__container .article__actions .article__actions_right{
     background: var(--background-button-right-article);
     color: var(--light);
 }
 /*----------------------      FIN ARTICLE   --------------------*/
 
 /*----------------------      CONTACT   ------------------------*/
-main section.contact {
+.contact {
     grid-area: contact;
     height: auto;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
@@ -390,37 +527,39 @@ main section.contact {
     padding: 50px;
 }
 
-main section.contact h2 {
+.contact h2 {
     text-align: center;
 }
 
-main section.contact .contact__form {
+.contact .contact__form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-main section.contact .contact__form input {
+.contact .contact__form input {
     height: 30px;
 }
 
-main section.contact .contact__form input,
-main section.contact .contact__form textarea {
+.contact .contact__form input,
+.contact .contact__form textarea {
+    /*
     margin-top: 10px;
-    margin-bottom: 10px;
     width: 100%;
+    */
+    margin-bottom: 15px;border-radius: 3px;
 }
 
-main section.contact .contact__form .contact__form__send {   
+.contact .contact__form .contact__form__send {   
     text-align: right;
 }
 
-main section.contact .contact__form .contact__form__send button{
+.contact .contact__form .contact__form__send button{
     padding: 8px;
     background-color: black;
     color: white;
-    width: 90px;
+    width: 222px;
 }
 /*----------------------      FIN CONTACT   -------------------*/
 
@@ -455,125 +594,159 @@ main section.contact .contact__form .contact__form__send button{
     }
     /*----------------------      FIN HEADER   --------------------*/
     /*----------------------      NAVIGATION   -------------------*/
-    nav ul li {
-        display: inline-block;
-        vertical-align: top;
-        position: relative;
+    .nav .menu {
+        display: flex; /*1*/
+        flex-direction : row; /*2*/
+        justify-content: space-around; /*3*/
+    }
+
+    .sous-menu {
+        min-width: 180px;        
+    }
+
+    .sous-menu a { /*4*/
+        text-align: left;
+        color:white;
+        border-bottom: 1px solid white;
+    }
+
+    .has-children:hover > .sous-menu { /*2*/
+        display: flex;
+        position: absolute;
     }
     
-    nav ul li a {
-        display: block;
-        padding: var(--padding-navigation-large);   
-        text-decoration: none;
-        font-size: var(--font-size-nav-large);    
-        text-transform: uppercase;
+    .sous-menu .sous-menu {
+        top: 0px;
+        left: 100%;
+        min-width: 180px;
+        text-align: left;
     }
-    
-    nav .sub-menu {
-        width: var(--width-sub-menu-large);
-    }
+
     
     /*----------------------      FIN NAVIGATION   -------------------*/
     /*----------------------      BANNIERE      --------------------*/
-    main section.banner h2 {
+    .banner h2 {
         letter-spacing: var(--letter-spacing-l);
+        font-size: var(--font-size-banner-l);
     }
     /*----------------------      FIN BANNIERE   -------------------*/
     /*----------------------      PROJETS   -------------------*/
-    main section.projects {
-        margin: var(--margin-bottom-section);
+    .projects {
+        /*
+            margin: var(--margin-bottom-section);
+        */
     }
         
-    main section.projects .articles {
+    .projects .projects_container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin:0px;
     }
     
-    main section.projects h2 {
+    .projects .projects_container .projet1,
+    .projects .projects_container .projet2 {
+        margin-right: 10px;
+    }
+
+    .projects h2 {
         text-align: left;
     }
-    
-    main section.projects article {
-        padding: var(--padding-proj-article-l);
-    }
-    
-    main section.projects article .projet__image:hover {
+        
+    .projects article .projet__image:hover {
         opacity: var(--opacity);   
     }
     /*----------------------      FIN PROJETS   -------------------*/
     
     /*----------------------      ETUDES   ------------------------*/
-    main section.etudes {
+    .etudes {
         height: auto;
         margin: var(--margin-bottom-section);
         padding: var(--padding-etudes-l);
     }
     
-    main section.etudes h2 {
+    .etudes h2 {
         text-align: left;
     }
     
-    main section.etudes .info-user {
+    .etudes .info-user {
         flex-direction: row;
         align-items: stretch;    
         margin-bottom: var(--margin-bottom-etudes-info-user-l);    
     }
     
-    main section.etudes .info-user .info-user__left {
+    .etudes .info-user .info-user__left {
         flex-direction: column;
         justify-content: space-between;
         text-align: left;
     }
     
-    main section.etudes .info-user .info-user__right {
-        display: flex;
+    .etudes .info-user .info-user__right {
         flex-direction: column-reverse;
     }
     
-    main section.etudes .etudes-user .etude-user {
+    .etudes .etudes-user .etude-user {
         justify-content: space-between;
         flex-direction: row;
     }
     
-    main section.etudes .etudes-user .etude-user .etude-user__date {
+    .etudes .etudes-user .etude-user .etude-user__date {
         padding: var(--padding-etude-user-date-l);
         margin-right: var(--margin-right-etude-user-date-l);
+    }
+
+    h4.etude-user__date {
+        line-height: 4rem;
     }
     /*----------------------      FIN ETUDES   -------------------*/
     
     /*----------------------      ARTICLES   -------------------*/
-    main section.articles {
+    .articles {
         height: auto;
+        /*
         margin: var(--margin-bottom-section);
+        */
+        margin:0px;
     }
 
-    main section.articles h2{
+    .articles h2{
         text-align: left;
     }
     
-    main section.articles .articles__container {
-        justify-content: space-around;
-        align-items: stretch;
+    .articles .articles__container {
+        justify-content: space-around;       
         flex-direction: row;
     }
     
-    main section.articles .articles__container .article {
+    .articles .articles__container .first-article{
+        margin-right: 10px;
+    }    
+
+    .articles .articles__container .article {
+        /*
         padding: var(--padding-article-l);
+        */
+        padding: 0px;
     }
+
+    
+
     /*----------------------      FIN ARTICLE   --------------------*/
     
     /*----------------------      CONTACT   ------------------------*/
-    main section.contact {
+    .contact {
         margin: var(--margin-bottom-section);
     }
     
-    main section.contact h2 {
+    .contact h2 {
         text-align: left;
     }
     
-    main section.contact .contact__form input,
-    main section.contact .contact__form textarea {
+    .contact .contact__form input{
+        width: 200px;
+    }  
+
+    .contact .contact__form textarea {
         width: 530px;
     }    
     /*----------------------      FIN CONTACT   -------------------*/
