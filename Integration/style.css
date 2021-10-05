@@ -37,8 +37,6 @@
     --letter-spacing-title-large: 25px;
 
     --border-actif: 2px solid red;
-    --color-active-link-nav: red;
-
     --padding-navigation: 10px;
     --padding-navigation-large: 20px;
     --color-nav: black;
@@ -50,8 +48,7 @@
     --background-color-nav: #1abc9c;
     */
     --width-sub-menu-large: 250px;
-    --color-nav: orange;
-
+    
     --image-banner: "banner.jpg"; 
     --height-banner: 80vh;
     --font-size-banner: 20px;
@@ -73,7 +70,7 @@
     --margin-bottom-etudes:30px;
     --margin-bottom-etudes-info-user: 15px;
     --margin-bottom-etudes-info-user-l: 30px;
-    --margin-top-info-user-right: 17px;
+    --margin-top-info-user-right: 5px;
     --margin-bottom-etude-user: 16px;
     --border-etude-user-date: 1px solid black;
     --padding-etude-user-date-l: 10px;
@@ -125,6 +122,11 @@ button {
     filter: grayscale(100%);
 }
 
+button {
+    cursor: pointer;
+}
+
+/* Layout principal with CSS GRID */
 main .page-index {
     height: var(--height-page-index);
     display: grid;
@@ -201,7 +203,7 @@ main .page-index {
 
 .nav .menu li.active > a{
     padding: 15px;
-    border: 2px solid red;
+    border: var(--border-actif);
 }
 
 .sous-menu a {
@@ -213,34 +215,33 @@ main .page-index {
     top: 0px;
     left: 100%;
     background: #1e76d6;
+    min-width: 180px;
+    text-align: left;
 }
 
 .sous-menu {
     display: none;
     flex-flow: column wrap;
-    min-width: 100px;
+    min-width: 180px;
     position: absolute;
     background: dodgerblue;
-    position: static;
+    position: relative;
 }
 
 .sous-menu.is-active {
     display: flex!important;
 }
 
-.sous-menu a { /*4*/
+.sous-menu a { 
     text-align: center;
     color:white;
 }
 
-.sous-menu .sous-menu {
-    top: 0px;
-    /*
-    left: 100%;
-    */
-    text-align: center;
-    background: #1e76d6;
+.has-children:hover > .sous-menu {
+    display: flex;
 }
+
+
 /*----------------------      FIN NAVIGATION   -------------------*/
 
 /*----------------------      BANNIERE      --------------------*/
@@ -252,6 +253,7 @@ main .page-index {
     justify-content: center;    
     background: url("./images/banner.jpg") center center;
     background-size: cover;
+    background-repeat: no-repeat;
     margin-top: var(--margin-top-banner);
     border-radius: var(--border-radius);
     position: relative;
@@ -268,49 +270,43 @@ main .page-index {
 }
 
 
-.banner .symfony {
+.symfony {
+    position: absolute;
+    top: 50px;
+    left: 50px;
     background: url('./images/logos/symfony.png') center center;
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    border-radius: 50px;
 }
 
-.banner .php {
+.php {
+    position: absolute;
+    top: 50px;
+    right: 50px;
     background: url('./images/logos/php.png') center center;
-    background-size: cover;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    border-radius: 50px;
 }
 
-.banner .angular {
-    background: url('./images/logos/angular.jpg') center center;
-    background-size: cover;
-    width: 50px;
-    height: 50px;
+.angular {
     position: absolute;
     left: 50px;
     bottom: 50px;
-    border-radius: 50px;
+    background: url('./images/logos/angular.jpg') center center;
 }
 
-.banner .react {
-    background: url('./images/logos/react.png') center center;
-    background-size: cover;
-    width: 50px;
-    height: 50px;
+.react {
     position: absolute;
     right: 50px;
     bottom: 50px;
+    background: url('./images/logos/react.png') center center;
+}
+
+.symfony, .php, .angular, .react {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
     border-radius: 50px;
 }
+
+
 /*----------------------      FIN BANNIERE   -------------------*/
 
 /*----------------------      PROJETS   -------------------*/
@@ -364,6 +360,7 @@ main .page-index {
 .projects article .projet__image2,
 .projects article .projet__image3 {
     background-size: cover;
+    background-repeat: no-repeat;
     border-radius: var(--border-radius);
     max-width: var(--max-width-image);
     height: var(--height-image-proj);    
@@ -437,6 +434,7 @@ p.etude-user__description {
 }
 
 h4.etude-user__date {
+    text-align: center;
     line-height: 7.0rem;
 }
 /*----------------------      FIN ETUDES   -------------------*/
@@ -595,22 +593,22 @@ p.article__description {
     /*----------------------      FIN HEADER   --------------------*/
     /*----------------------      NAVIGATION   -------------------*/
     .nav .menu {
-        display: flex; /*1*/
-        flex-direction : row; /*2*/
-        justify-content: space-around; /*3*/
+        display: flex;
+        flex-direction : row;
+        justify-content: space-around;
     }
 
     .sous-menu {
         min-width: 180px;        
     }
 
-    .sous-menu a { /*4*/
+    .sous-menu a {
         text-align: left;
         color:white;
         border-bottom: 1px solid white;
     }
 
-    .has-children:hover > .sous-menu { /*2*/
+    .has-children:hover > .sous-menu {
         display: flex;
         position: absolute;
     }
@@ -619,7 +617,7 @@ p.article__description {
         top: 0px;
         left: 100%;
         min-width: 180px;
-        text-align: left;
+        text-align: center;
     }
 
     
