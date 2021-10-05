@@ -105,6 +105,10 @@ body {
     font-size: 1.2rem;
 }
 
+a {
+    text-decoration: none;
+}
+
 img {
     border-radius: var(--border-radius);    
 }
@@ -605,27 +609,25 @@ p.article__description {
 
     .sous-menu {
         min-width: 180px;        
-    }
 
-    .sous-menu a {
-        text-align: left;
-        color:white;
-        border-bottom: 1px solid white;
+        a {
+            text-align: left;
+            color:white;
+            border-bottom: 1px solid white;
+        }
+
+        .sous-menu {
+            top: 0px;
+            left: 100%;
+            min-width: 180px;
+            text-align: center;
+        }   
     }
 
     .has-children:hover > .sous-menu {
         display: flex;
         position: absolute;
     }
-    
-    .sous-menu .sous-menu {
-        top: 0px;
-        left: 100%;
-        min-width: 180px;
-        text-align: center;
-    }
-
-    
     /*----------------------      FIN NAVIGATION   -------------------*/
     /*----------------------      BANNIERE      --------------------*/
     .banner h2 {
@@ -638,27 +640,25 @@ p.article__description {
         /*
             margin: var(--margin-bottom-section);
         */
-    }
-        
-    .projects .projects_container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin:0px;
-    }
-    
-    .projects .projects_container .projet1,
-    .projects .projects_container .projet2 {
-        margin-right: 10px;
-    }
+        h2 {
+            text-align: left;
+        }
 
-    .projects h2 {
-        text-align: left;
-    }
-        
-    .projects article .projet__image:hover {
-        opacity: var(--opacity);   
-    }
+        .projects_container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin:0px;
+
+            .projet1, .projet2 {
+                margin-right: 10px;
+            }
+        }
+
+        article .projet__image:hover {
+            opacity: var(--opacity);   
+        }
+    }        
     /*----------------------      FIN PROJETS   -------------------*/
     
     /*----------------------      ETUDES   ------------------------*/
@@ -666,36 +666,37 @@ p.article__description {
         height: auto;
         margin: var(--margin-bottom-section);
         padding: var(--padding-etudes-l);
-    }
-    
-    .etudes h2 {
-        text-align: left;
-    }
-    
-    .etudes .info-user {
-        flex-direction: row;
-        align-items: stretch;    
-        margin-bottom: var(--margin-bottom-etudes-info-user-l);    
-    }
-    
-    .etudes .info-user .info-user__left {
-        flex-direction: column;
-        justify-content: space-between;
-        text-align: left;
-    }
-    
-    .etudes .info-user .info-user__right {
-        flex-direction: column-reverse;
-    }
-    
-    .etudes .etudes-user .etude-user {
-        justify-content: space-between;
-        flex-direction: row;
-    }
-    
-    .etudes .etudes-user .etude-user .etude-user__date {
-        padding: var(--padding-etude-user-date-l);
-        margin-right: var(--margin-right-etude-user-date-l);
+
+        h2 {
+            text-align: left;
+        }
+
+        .info-user {
+            flex-direction: row;
+            align-items: stretch;    
+            margin-bottom: var(--margin-bottom-etudes-info-user-l);   
+            
+            .info-user__left {
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: left;
+            }
+
+            .info-user__right {
+                flex-direction: column-reverse;
+            }
+        }
+
+        .etudes-user .etude-user {
+            justify-content: space-between;
+            flex-direction: row;
+
+            .etude-user__date {
+                padding: var(--padding-etude-user-date-l);
+                margin-right: var(--margin-right-etude-user-date-l);                
+            }
+
+        }
     }
 
     h4.etude-user__date {
@@ -710,48 +711,48 @@ p.article__description {
         margin: var(--margin-bottom-section);
         */
         margin:0px;
-    }
 
-    .articles h2{
-        text-align: left;
-    }
-    
-    .articles .articles__container {
-        justify-content: space-around;       
-        flex-direction: row;
-    }
-    
-    .articles .articles__container .first-article{
-        margin-right: 10px;
-    }    
+        h2{
+            text-align: left;
+        }
 
-    .articles .articles__container .article {
-        /*
-        padding: var(--padding-article-l);
-        */
-        padding: 0px;
+        .articles__container {
+            justify-content: space-around;       
+            flex-direction: row;
+
+            .first-article{
+                margin-right: 10px;
+            }
+
+            .article {
+                /*
+                padding: var(--padding-article-l);
+                */
+                padding: 0px;
+            }
+        }
     }
-
-    
-
     /*----------------------      FIN ARTICLE   --------------------*/
     
     /*----------------------      CONTACT   ------------------------*/
     .contact {
         margin: var(--margin-bottom-section);
-    }
-    
-    .contact h2 {
-        text-align: left;
-    }
-    
-    .contact .contact__form input{
-        width: 200px;
-    }  
+        
+        h2 {
+            text-align: left;
+        }
+        
+        .contact__form {
 
-    .contact .contact__form textarea {
-        width: 530px;
-    }    
+            input{
+                width: 200px;
+            }
+
+            textarea {
+                width: 530px;
+            }  
+        }
+    }   
     /*----------------------      FIN CONTACT   -------------------*/
     
     /*----------------------      FOOTER   -------------------*/    
@@ -759,13 +760,12 @@ p.article__description {
         grid-area: footer;
         height: auto;
     }
-    .footer .footer_info {
-        text-align: center;
-        padding: 10px;
-    }
-    
-    .footer .footer_info a {
-        text-decoration: none;
+    .footer {
+
+        .footer_info {
+            text-align: center;
+            padding: 10px;
+        }
     }
     /*----------------------      FIN FOOTER   -------------------*/
 }
