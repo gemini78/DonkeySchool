@@ -9,26 +9,24 @@
     <meta name="description"
         content="Mon portfolio, c'est avant tout une bibliothèque de tous mes projets, mais aussi un concentré d'articles">
     <title>Mon portfolio</title>
-    <link rel="stylesheet" href="style.css">    
-    <link href="mobile.css" rel="stylesheet" media="screen and (max-width: 600px)">      
-
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="page-index">
         <header class="header">
             <h1>MON PORTFOLIO</h1>
-            <nav>
-                <ul>
+            <nav class="nav">
+                <ul class="menu">
                     <li class="active"><a href="#">Projets</a></li>
                     <li><a href="#">Etudes</a>
                     </li>
-                    <li>
+                    <li class="has-children">
                         <a href="#">Articles</a>
-                        <ul class="sub-menu">
-                            <li><a href="#">Symfony</a></li>
-                            <li><a href="#">Html/Css</a></li>
-                            <li><a href="#">Javascript</a></li>
+                        <ul class="sous-menu">
+                            <li><a href="#angular">Angular 10</a></li>
+                            <li><a href="#react ">React</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Contact</a></li>
@@ -37,14 +35,18 @@
         </header>
         <main>
             <section class="banner">
-                <h2>NOM PRENOM</h2>
+                <h2>STEBOU MENDY</h2>
+                <div class="php"></div>
+                <div class="symfony"></div>
+                <div class="angular"></div>
+                <div class="react"></div>
             </section>
             <section class="projects">
                 <h2>PROJETS REALISÉS</h2>
-                <div class="articles">
-                    <article class="projet">
-                        <div class="projet__image"></div>
-                        <h3>Projet 1</h3>
+                <div class="projects_container">
+                    <article class="projet projet1">
+                        <div class="projet__image1"></div>
+                        <h3>Symfony 5</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia!
                             Deleniti, dolore autem. At architecto reiciendis sunt distinctio!
@@ -52,9 +54,9 @@
                         </p>
                         <button type="button">En savoir plus</button>
                     </article>
-                    <article class="projet">
-                        <div class="projet__image"></div>
-                        <h3>Projet 2</h3>
+                    <article class="projet projet2">
+                        <div class="projet__image2"></div>
+                        <h3>Angular</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia!
                             Deleniti, dolore autem. At architecto reiciendis sunt distinctio!
@@ -62,9 +64,9 @@
                         </p>
                         <button type="button">En savoir plus</button>
                     </article>
-                    <article class="projet">
-                        <div class="projet__image"></div>
-                        <h3>Projet 3</h3>
+                    <article class="projet projet3">
+                        <div class="projet__image3"></div>
+                        <h3>Wordpress</h3>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Ea obcaecati velit doloribus necessitatibus perferendis provident exercitationem officia!
                             Deleniti, dolore autem. At architecto reiciendis sunt distinctio!
@@ -77,12 +79,11 @@
             <section class="etudes">
                 <h2>ETUDES</h2>
                 <div class="info-user">
-                    <img src="https://w7.pngwing.com/pngs/590/236/png-transparent-computer-icons-man-icon-recruiter-business-desktop-wallpaper-thumbnail.png"
-                        alt="user image" class="info-user__img" width="200" height="200">
+                    <img src="./images/avatar.png" alt="user image" class="info-user__img" width="200" height="200">
                     <div class="info-user__left">
-                        <span class="info-user__lastname">NOM</span><br>
-                        <span class="info-user__firstname">PRENOM</span><br>
-                        <span class="info-user__age">AGE</span><br>
+                        <span class="info-user__lastname">NOM</span>
+                        <span class="info-user__firstname">PRENOM</span>
+                        <span class="info-user__age">AGE</span>
                         <span class="info-user__email">ADRESSE EMAIL</span>
                     </div>
                     <div class="info-user__right">
@@ -136,34 +137,30 @@
             <section class="articles">
                 <h2>ARTICLES</h2>
                 <div class="articles__container">
-                    <article class="article">
+                    <article  id="angular" class="article first-article">
                         <div class="article__image"></div>
 
-                        <h3 class="article__title">Article 1</h3>
+                        <h3 class="article__title">Angular 10</h3>
                         <p class="article__description">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            Expedita autem ad omnis eius esse consequatur. At, quam architecto. Dolorum ipsam quo dicta
-                            facere magni,
-                            soluta quia earum nobis iste numquam.
+                            Cette version inclut des mises à jour non seulement pour le framework Angular, mais bien sûr aussi pour le matériel angulaire et la CLI.
+                            L'une des mises à jour les plus importantes étant le mode strict ...
                         </p>
                         <div class="article__actions">
                             <button type="button" class="article__actions_left">Lire</button>
-                            <button type="button" class="article__actions_right">Commentaires</button>
+                            <button type="button" class="article__actions_right"> 8 Commentaires</button>
                         </div>
                     </article>
 
-                    <article class="article">
-                        <div class="article__image"></div>
-                        <h3 class="article__title">Article 2</h3>
+                    <article id="react" class="article">
+                        <div class="article__image2"></div>
+                        <h3 class="article__title">React</h3>
                         <p class="article__description">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            Expedita autem ad omnis eius esse consequatur. At, quam architecto. Dolorum ipsam quo dicta
-                            facere magni,
-                            soluta quia earum nobis iste numquam.
+                            React est une bibliothèque JavaScript libre développée par Facebook depuis 2013.
+                            Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants ...
                         </p>
                         <div class="article__actions">
                             <button type="button" class="article__actions_left">Lire</button>
-                            <button type="button" class="article__actions_right">Commentaires</button>
+                            <button type="button" class="article__actions_right">7 Commentaires</button>
                         </div>
                     </article>
                 </div>
@@ -174,14 +171,14 @@
                     <form action="#" method="post">
                         <label for="names">Nom et Prénom</label><br>
                         <input type="text" id="names"><br>
-    
+
                         <label for="email">E-mail</label><br>
                         <input type="email" id="email"><br>
-    
+
                         <label for="message">Message</label><br>
                         <textarea id="message" cols="30" rows="10"></textarea><br>
                         <div class="contact__form__send">
-                            <button type="submit">Envoyé</button>
+                            <button type="submit">Envoyer</button>
                         </div>
                     </form>
                 </div>
